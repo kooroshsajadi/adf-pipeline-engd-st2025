@@ -1,0 +1,9 @@
+{
+	"name": "adf-engd-st2025-kourosh-003",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "7fe4b1bc-3dd5-4797-af45-8ed358af9bea",
+		"tenantId": "cc7df247-60ce-4a0f-9d75-704cf60efc64"
+	}
+}
