@@ -106,7 +106,13 @@
 				"inputs": [
 					{
 						"referenceName": "Sales",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"relative_url": {
+								"value": "@pipeline().parameters.source",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
@@ -121,6 +127,10 @@
 			"source": {
 				"type": "string",
 				"defaultValue": "/umpirsky/country-list/refs/heads/master/data/en_US/country.csv"
+			},
+			"source2": {
+				"type": "string",
+				"defaultValue": "denandreychuk/b9aa812f10e4b60368cff69c6384a210/raw/d24f715d9350d674b0b1bf494d82ccdf81de0647/100%2520Sales%2520Records.csv"
 			}
 		},
 		"annotations": []
