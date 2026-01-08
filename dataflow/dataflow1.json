@@ -19,7 +19,15 @@
 					"name": "source2"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Parquet2",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "filterAF"
@@ -75,7 +83,16 @@
 				"     errors: true) ~> cast1",
 				"cast1 derive(isMoreThanMilion = greater(toInteger({Total Profit}), 1000000)\r",
 				") ~> derivedColumn1",
-				"derivedColumn1 aggregate(count = count()) ~> count"
+				"derivedColumn1 aggregate(count = count()) ~> count",
+				"count sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          id as string,",
+				"          value as string",
+				"     ),",
+				"     format: 'parquet',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
