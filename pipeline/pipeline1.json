@@ -164,6 +164,9 @@
 								},
 								"sink": {
 									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings"
+									},
 									"formatSettings": {
 										"type": "DelimitedTextWriteSettings",
 										"quoteAllText": true,
@@ -194,14 +197,8 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "Sales",
-									"type": "DatasetReference",
-									"parameters": {
-										"relative_url": {
-											"value": "@pipeline().parameters.source2",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "countriesStorage",
+									"type": "DatasetReference"
 								}
 							]
 						}
@@ -232,6 +229,9 @@
 								},
 								"sink": {
 									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings"
+									},
 									"formatSettings": {
 										"type": "DelimitedTextWriteSettings",
 										"quoteAllText": true,
@@ -262,14 +262,8 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "countries",
-									"type": "DatasetReference",
-									"parameters": {
-										"relative_url": {
-											"value": "@pipeline().parameters.source",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "countriesStorage",
+									"type": "DatasetReference"
 								}
 							]
 						}
