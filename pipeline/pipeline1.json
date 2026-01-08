@@ -162,9 +162,37 @@
 										"type": "DelimitedTextReadSettings"
 									}
 								},
-								"enableStaging": false
+								"sink": {
+									"type": "DelimitedTextSink",
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
 							},
 							"inputs": [
+								{
+									"referenceName": "Sales",
+									"type": "DatasetReference",
+									"parameters": {
+										"relative_url": {
+											"value": "@pipeline().parameters.source2",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
 								{
 									"referenceName": "Sales",
 									"type": "DatasetReference",
@@ -202,9 +230,37 @@
 										"type": "DelimitedTextReadSettings"
 									}
 								},
-								"enableStaging": false
+								"sink": {
+									"type": "DelimitedTextSink",
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
 							},
 							"inputs": [
+								{
+									"referenceName": "countries",
+									"type": "DatasetReference",
+									"parameters": {
+										"relative_url": {
+											"value": "@pipeline().parameters.source",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
 								{
 									"referenceName": "countries",
 									"type": "DatasetReference",
