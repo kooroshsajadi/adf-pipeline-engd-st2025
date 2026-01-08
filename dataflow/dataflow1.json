@@ -29,6 +29,12 @@
 				},
 				{
 					"name": "cast1"
+				},
+				{
+					"name": "derivedColumn1"
+				},
+				{
+					"name": "count"
 				}
 			],
 			"scriptLines": [
@@ -66,7 +72,10 @@
 				"join1 cast(output(",
 				"          {Unit Price} as integer '000'",
 				"     ),",
-				"     errors: true) ~> cast1"
+				"     errors: true) ~> cast1",
+				"cast1 derive(isMoreThanMilion = greater(toInteger({Total Profit}), 1000000)\r",
+				") ~> derivedColumn1",
+				"derivedColumn1 aggregate(count = count()) ~> count"
 			]
 		}
 	}
