@@ -61,7 +61,7 @@
 		"parameters": {
 			"source": {
 				"type": "string",
-				"defaultValue": "umpirsky/country-list/refs/heads/master/data/en_US/country.csv"
+				"defaultValue": "/umpirsky/country-list/refs/heads/master/data/en_US/country.csv"
 			}
 		},
 		"annotations": []
