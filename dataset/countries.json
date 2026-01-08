@@ -5,6 +5,11 @@
 			"referenceName": "github_countries",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"source": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
