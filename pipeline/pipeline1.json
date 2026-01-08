@@ -219,6 +219,15 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "Wait1",
+				"type": "Wait",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 1
+				}
 			}
 		],
 		"parameters": {
@@ -233,6 +242,14 @@
 			"is_country": {
 				"type": "bool",
 				"defaultValue": true
+			},
+			"is_array": {
+				"type": "array",
+				"defaultValue": [
+					1,
+					2,
+					3
+				]
 			}
 		},
 		"annotations": []
